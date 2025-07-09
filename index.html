@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Vendas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden; /* Esconde o overflow para a animação */
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 3em;
+            font-weight: 900;
+            color: #22c55e; /* Verde da natureza */
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave */
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #fff;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background-color: #0a3622; /* Verde escuro */
+            color: #fff;
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #166534; /* Verde um pouco mais claro no hover */
+        }
+
+        .disclaimer {
+            font-size: 0.8em;
+            color: #777;
+            margin-top: 20px;
+        }
+
+        /* Animação de confete */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            border-radius: 50%;
+            animation: confetti-fall 3s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Cores diferentes para o confete */
+        .confetti:nth-child(1) { background-color: #f00; left: 10%; animation-delay: 0s; }
+        .confetti:nth-child(2) { background-color: #0f0; left: 20%; animation-delay: 0.5s; }
+        .confetti:nth-child(3) { background-color: #00f; left: 30%; animation-delay: 1s; }
+        .confetti:nth-child(4) { background-color: #ff0; left: 40%; animation-delay: 1.5s; }
+        .confetti:nth-child(5) { background-color: #f0f; left: 50%; animation-delay: 2s; }
+        .confetti:nth-child(6) { background-color: #0ff; left: 60%; animation-delay: 2.5s; }
+        .confetti:nth-child(7) { background-color: #f00; left: 70%; animation-delay: 0s; }
+        .confetti:nth-child(8) { background-color: #0f0; left: 80%; animation-delay: 0.5s; }
+        .confetti:nth-child(9) { background-color: #00f; left: 90%; animation-delay: 1s; }
+        .confetti:nth-child(10) { background-color: #ff0; left: 5%; animation-delay: 1.5s; }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🎉 Parabéns você chegou até aqui! 🎉</h1>
+        <p>Hmmmm. Parece que você realmente está comprometido com seus resultados. Clique no botão abaixo para liberar sua mentoria.</p>
+        <button>Liberar Mentoria Milionária Agora</button>
+        <p class="disclaimer">
+            *Aviso Legal: Os resultados podem variar. Consulte um profissional antes de tomar qualquer decisão.*
+        </p>
+    </div>
+
+    <!-- Confetes -->
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+
+    <script>
+        // Script para criar mais confetes dinamicamente
+        const container = document.querySelector('.container');
+        for (let i = 0; i < 20; i++) {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            confetti.style.left = `${Math.random() * 100}%`;
+            confetti.style.animationDelay = `${Math.random() * 3}s`;
+            container.appendChild(confetti);
+        }
+    </script>
+
+</body>
+</html>
